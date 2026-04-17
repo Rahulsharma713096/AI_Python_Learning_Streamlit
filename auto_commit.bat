@@ -1,13 +1,9 @@
 @echo off
 
-REM Go to project folder
 cd /d C:\Users\hp\PycharmProjects\AI_Python_Learning
 
-REM Get current date and time
-for /f "tokens=1-4 delims=/ " %%a in ("%date%") do set mydate=%%d-%%b-%%c
-for /f "tokens=1-2 delims=: " %%a in ("%time%") do set mytime=%%a-%%b
-
-set datetime=%mydate%_%mytime%
+REM Get clean timestamp using PowerShell
+for /f %%i in ('powershell -Command "Get-Date -Format yyyy-MM-dd_HH-mm"') do set datetime=%%i
 
 echo ==============================
 echo Adding files...
@@ -19,7 +15,11 @@ git status
 
 echo ==============================
 echo Committing with timestamp...
-git commit -m "Auto commit %datetime%"
+git commit -m "Auto commit Done by Rahul %datetime%"
+
+echo ==============================
+echo Pushing to GitHub...
+git push
 
 echo ==============================
 echo Done!
