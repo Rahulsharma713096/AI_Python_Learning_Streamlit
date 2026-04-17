@@ -9,6 +9,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 
+
 # 🔐 Set Gemini API Key (use environment variable in production)
 #os.environ["GOOGLE_API_KEY"] = "RAHUL"
 def load_keys(filepath="key.txt"):
