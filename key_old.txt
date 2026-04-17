@@ -1,0 +1,3 @@
+openai="No money no Key"
+GOOGLE_API_KEY="No money no Key"
+OpenRouter="No money no Key"
